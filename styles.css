@@ -1,0 +1,180 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+#center {
+    position: relative;
+    padding: 200px 0px;
+    height: 1100px;
+    background-color: gray;
+    background-color: rgb(12, 12, 12);
+    background-image: url('./crossPattern.png');
+    background-size: 6rem;
+    /* background: linear-gradient(180deg, rgba(4, 15, 61, 1) 0%, rgba(33, 79, 123, 1) 100%); */
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    align-items: center;
+}
+
+#mainCont {
+    /* border: 1px solid white; */
+    width: 80%;
+    z-index: 10;
+    /* border-image: linear-gradient(0deg, rgb(0,0,0) 0%, rgb(250,250,250) 100%); */
+}
+
+#shadow {
+    z-index: 0;
+    position: absolute;
+    top: 11%;
+    left: 7%;
+    width: 86%;
+    height: 50%;
+    /* filter: blur(10px); */
+    background-color: rgba(12, 12, 12, 1);
+    border: 1px solid white;
+}
+
+#header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem;
+}
+
+#links {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+#links li {
+    list-style-type: none;
+    padding: 0rem 1rem;
+}
+
+::-webkit-scrollbar {
+    display: none;
+}
+
+#bigBox {
+    /* filter: blur(.5rem);
+    transition: filter .5s; */
+    width: 80%;
+    height: 50%;
+    border-radius: 3rem;
+    border: 1px solid rgba(192, 192, 192, 0.301);
+    background-color: rgba(112, 123, 129, 0.432);
+    /* -webkit-backdrop-filter: blur(3px); */
+    display: flex;
+}
+
+/* #bigBox:hover {
+    filter: blur(0);
+    transition: filter .5s;
+} */
+
+.georama {
+    font-family: "Georama", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: normal;
+    font-style: normal;
+    font-variation-settings:
+        "wdth" 100;
+}
+
+#headText {
+    color: rgb(12, 12, 12);
+    background-color: rgb(241, 241, 241);
+    width: max-content;
+    padding: .3rem;
+    font-size: 2.3rem;
+    margin-bottom: .4rem;
+}
+
+#headText2 {
+    color: white;
+    font-size: 1.6rem;
+    margin-left: 3rem;
+}
+
+#skillHeader {
+    color: white;
+    font-size: 1.5rem;
+    margin-bottom: .5rem;
+}
+
+#skillContainer {
+    width: auto;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    height: 10rem;
+}
+
+#skillContainer li {
+    list-style-type: none;
+}
+
+.skill {
+    font-size: .9rem;
+    margin-right: .5rem;
+    padding: .5rem 1rem;
+    border-radius: 10rem;
+    border: 1px solid white;
+    color: white;
+    background-color: rgb(6, 6, 6);
+}
+
+
+.center {
+    transform: translate(0%);
+    transition: transform 1s;
+}
+
+.snapCenter {
+    transform: translate(0%);
+}
+
+.left {
+    transform: translate(-100%);
+    transition: transform 1s;
+}
+
+.snapLeft {
+    transform: translate(-100%);
+}
+
+.hiddenL {
+    transform: translate(-200%);
+    filter: opacity(0%);
+    transition: transform 1s, filter 1s;
+}
+
+.leftMost {
+    transform: translate(-200%);
+}
+
+.right {
+    transform: translate(100%);
+    filter: opacity(100%);
+    transition: transform 1s, filter 1s;
+}
+
+.snapRight {
+    transform: translate(100%);
+}
+
+.rightMost {
+    transform: translate(200%);
+    transition: transform 1s;
+}
+
+.snapRightMost {
+    transform: translate(200%);
+    filter: opacity(0%);
+}

@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Georama:ital,wght@0,100..900;1,100..900&family=Playwrite+CU:wght@100..400&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="./styles.css">
+    <title>Website Scrolling</title>
+</head>
+<!-- 
+<div style="position: fixed; top:10px; left:20px; background-color: lightcoral;">
+    <p id="one">goozma</p>
+</div>
+<div style="position: fixed; top:50px; left:20px; background-color: lightcoral;">
+    <p id="two">goozma</p>
+</div>
+<div style="position: fixed; top:90px; left:20px; background-color: lightcoral;">
+    <p id="three">goozma</p>
+</div>
+<div style="position: fixed; top:130px; left:20px; background-color: rgb(165, 240, 128);">
+    <p id="four">goozma</p>
+</div>
+<div style="position: fixed; top:170px; left:20px; background-color: rgb(165, 240, 128);">
+    <button onclick="">Go above</button>
+</div>
+<div style="position: fixed; top:210px; left:20px; background-color: rgb(165, 240, 128);">
+    <p id="five">goozma</p>
+</div>
+<div style="position: fixed; top:250px; left:20px; background-color: rgb(165, 240, 128);">
+    <p id="six">goozma</p>
+</div> -->
+
+<body>
+    <div id="center">
+        <!-- <div id="bigBox">
+        </div> -->
+        <div id="shadow"></div>
+        <div id="mainCont">
+            <div style="display: flex; flex-direction: row; justify-content: start; align-items: center;">
+                <div id="headText" class="georama">Arsalan's Portfolio</div>
+                <div id="headText2" class="georama">Full-Stack Developer with DevOps Skills</div>
+            </div>
+            <div style="margin-top:4%;">
+                <div style="margin:1rem 0rem">
+                    <p style="font-size: 1.2rem; color:white;" class="georama">I'm dedicated to creating robust,
+                        user-friendly, visually pleasing software.</p>
+                </div>
+                <div style="display: flex; flex-direction: row;  align-items: start; margin-top: 2%">
+                    <div style="width: 40%; margin-right: 6%; ">
+                        <p id="skillHeader" class="georama">Skills</p>
+                        <ul id="skillContainer" style="padding:0.5rem;">
+                            <li>
+                                <p class="skill georama">TypeScript</p>
+                            </li>
+                            <li>
+                                <p class="skill georama">JavaScript</p>
+                            </li>
+                            <li>
+                                <p class="skill georama">ReactJS</p>
+                            </li>
+                            <li>
+                                <p class="skill georama">NextJS</p>
+                            </li>
+                            <li>
+                                <p class="skill georama">Express.js</p>
+                            </li>
+                            <li>
+                                <p class="skill georama">React Native</p>
+                            </li>
+                            <li>
+                                <p class="skill georama">Python</p>
+                            </li>
+                            <li>
+                                <p class="skill georama">MongoDB</p>
+                            </li>
+                            <li>
+                                <p class="skill georama">PostgreSQL</p>
+                            </li>
+                            <li>
+                                <p class="skill georama">Firebase</p>
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="width: 50%; height: 50vh; border: 1px solid white;">
+                        <p id="skillHeader" class="georama">Projects</p>
+                        <div
+                            style="position: relative; display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
+                            <!-- <div
+                                style="border: 1px solid gray; border-radius: .6rem; width: 10%; margin-left: 10%; height: 12rem;">
+                            </div> -->
+                            <div id="e1" class="leftMost"
+                                style="position: absolute; top:10%; left:20%; border: 1px solid rgb(255, 181, 112); border-radius: .6rem; width: 23%; height: 16rem;">
+                            </div>
+                            <div id="item3" class="left"
+                                style="position: absolute; top:10%; left:20%; border: 1px solid rgb(255, 0, 0); border-radius: .6rem; width: 23%; height: 16rem;">
+                            </div>
+                            <div id="item1" class="center"
+                                style="position: absolute; top:10%; left:20%; border: 1px solid rgb(255, 0, 0); border-radius: .6rem; width: 23%; height: 16rem;">
+                            </div>
+                            <div id="item2" class="right"
+                                style="position: absolute; top:10%; left:20%; border: 1px solid rgb(255, 0, 0); border-radius: .6rem; width: 23%; height: 16rem;">
+                            </div>
+                            <div id="e2" class="rightMost"
+                                style="position: absolute; top:10%; left:20%; border: 1px solid gray; border-radius: .6rem; width: 23%; height: 16rem;">
+                            </div>
+                            <!-- <div style="border: 1px solid gray; border-radius: .6rem; width: 10%; margin-right: 10%; height: 12rem;">
+
+                            </div> -->
+                        </div>
+                    </div>
+                    <button onclick="useCarousel(1)">Next <span id="indicator">(Now = )</span></button>
+                    <button onclick="useCarousel(0)">Prev <span id="indicator">(Now = )</span></button>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+<script src="index1.js"></script>
+
+</html>
