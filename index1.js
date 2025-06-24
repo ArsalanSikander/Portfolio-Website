@@ -5,6 +5,7 @@
 // var sign4 = document.getElementById('five');
 // var sign5 = document.getElementById('six');
 
+
 let animationFrameId = null;
 let limit = document.documentElement.scrollHeight - window.innerHeight;
 let scrollPos = window.scrollY;
@@ -68,6 +69,12 @@ document.addEventListener('wheel', (event) => {
 }, { passive: false });
 
 
+let loader = document.getElementById('loader');
+window.onload = () => {
+    setInterval(() => {
+        loader.style.display = "none";
+    }, 500)
+}
 
 // Carousel related code
 
@@ -100,12 +107,6 @@ let prevItem, nextItem;
 let dir = "next";  // ?
 
 
-let ind = document.getElementById('indicator');
-
-function updIndicator(str) {
-    ind.innerHTML = `(Next = ${str})`;
-}
-
 // number provided indicates the next element to show (num >= 1 means next, num < 1 means previous element)
 function useCarousel(num) {
     if (num >= 1) {
@@ -118,40 +119,50 @@ function useCarousel(num) {
     else {
         dir = "prev";
         e1.className = "left";
-        item3.innerHTML = "center";
-        item1.innerHTML = "right";
-        item2.innerHTML = "hiddenR";
+        item3.className = "center";
+        item1.className = "right";
+        item2.className = "hiddenR";
     }
 }
 
 item1.addEventListener('transitionend', (event) => {
-    if (dir === 'next') {
-        // go to the next item
+    if (event.propertyName === 'transform') {
+        if (dir === 'next') {
 
-        currItem = currItem+1 > projectsArr.length-1 ? 0 : currItem+1;
-        item1.innerHTML = projectsArr[currItem].name;
+            currItem = currItem + 1 > projectsArr.length - 1 ? 0 : currItem + 1;
+            item1.innerHTML = projectsArr[currItem].name;
 
-        nextItem = currItem + 1 > projectsArr.length-1 ? 0 : currItem+1;
-        item2.innerHTML = projectsArr[nextItem].name;
+            nextItem = currItem + 1 > projectsArr.length - 1 ? 0 : currItem + 1;
+            item2.innerHTML = projectsArr[nextItem].name;
 
-        prevItem = currItem - 1 < 0 ? projectsArr.length-1 : currItem-1;
-        item3.innerHTML = projectsArr[prevItem].name;
+            prevItem = currItem - 1 < 0 ? projectsArr.length - 1 : currItem - 1;
+            item3.innerHTML = projectsArr[prevItem].name;
 
 
-        item3.className = 'snapLeft';
-        item1.className = "snapCenter";
-        item2.className = "snapRight";
-        e2.className = "snapRightMost";
+            item3.className = 'snapLeft';
+            item1.className = "snapCenter";
+            item2.className = "snapRight";
+            e2.className = "snapRightMost";
 
-        // dir="done";
+        }
+        else if (dir === "prev") {
+
+            currItem = currItem - 1 < 0 ? projectsArr.length - 1 : currItem - 1;
+            item1.innerHTML = projectsArr[currItem].name;
+
+            nextItem = currItem + 1 > projectsArr.length - 1 ? 0 : currItem + 1;
+            item2.innerHTML = projectsArr[nextItem].name;
+
+            prevItem = currItem - 1 < 0 ? projectsArr.length - 1 : currItem - 1;
+            item3.innerHTML = projectsArr[prevItem].name;
+
+
+            e1.className = "snapLeftMost";
+            item3.className = 'snapLeft';
+            item1.className = "snapCenter";
+            item2.className = "snapRight";
+
+        }
     }
-    else if(dir == "prev"){
-        
-        currItem = currItem - 1 < 0 ? projectsArr.length-1 : currItem-1;
-        
 
-    }
 })
-
-
-//TODO: swap

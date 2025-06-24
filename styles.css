@@ -6,7 +6,7 @@
 #center {
     position: relative;
     padding: 200px 0px;
-    height: 1100px;
+    height: 100vh;
     background-color: gray;
     background-color: rgb(12, 12, 12);
     background-image: url('./crossPattern.png');
@@ -28,13 +28,16 @@
 #shadow {
     z-index: 0;
     position: absolute;
-    top: 11%;
+    top: 13%;
     left: 7%;
     width: 86%;
-    height: 50%;
+    height: 65%;
     /* filter: blur(10px); */
     background-color: rgba(12, 12, 12, 1);
     border: 1px solid white;
+    border-bottom: 0px;
+    border-top-left-radius: 2.6rem;
+    border-top-right-radius: 2.6rem;
 }
 
 #header {
@@ -61,23 +64,6 @@
     display: none;
 }
 
-#bigBox {
-    /* filter: blur(.5rem);
-    transition: filter .5s; */
-    width: 80%;
-    height: 50%;
-    border-radius: 3rem;
-    border: 1px solid rgba(192, 192, 192, 0.301);
-    background-color: rgba(112, 123, 129, 0.432);
-    /* -webkit-backdrop-filter: blur(3px); */
-    display: flex;
-}
-
-/* #bigBox:hover {
-    filter: blur(0);
-    transition: filter .5s;
-} */
-
 .georama {
     font-family: "Georama", sans-serif;
     font-optical-sizing: auto;
@@ -85,6 +71,19 @@
     font-style: normal;
     font-variation-settings:
         "wdth" 100;
+}
+
+.childrenCentered {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.roundButton {
+    border: none;
+    background-color: white;
+    padding: 1rem;
+    border-radius: 10rem;
 }
 
 #headText {
@@ -99,7 +98,7 @@
 #headText2 {
     color: white;
     font-size: 1.6rem;
-    margin-left: 3rem;
+    /* margin-left: 3rem; */
 }
 
 #skillHeader {
@@ -112,8 +111,11 @@
     width: auto;
     display: flex;
     flex-direction: row;
+    justify-content: start;
+    align-items: start;
     flex-wrap: wrap;
-    height: 10rem;
+    padding: 0.5rem 0rem;
+    /* border: 1px solid white; */
 }
 
 #skillContainer li {
@@ -121,9 +123,10 @@
 }
 
 .skill {
-    font-size: .9rem;
+    font-size: .8rem;
     margin-right: .5rem;
     padding: .5rem 1rem;
+    margin-bottom: .3rem;
     border-radius: 10rem;
     border: 1px solid white;
     color: white;
@@ -133,7 +136,7 @@
 
 .center {
     transform: translate(0%);
-    transition: transform 1s;
+    transition: transform cubic-bezier(.05, .25, .01, .99) 0.5s;
 }
 
 .snapCenter {
@@ -141,40 +144,52 @@
 }
 
 .left {
-    transform: translate(-100%);
-    transition: transform 1s;
+    filter: opacity(100%);
+    transform: translate(-100%) scale(0.85);
+    transition: transform cubic-bezier(.05, .25, .01, .99) 0.5s, filter 0.5s;
 }
 
 .snapLeft {
-    transform: translate(-100%);
+    transform: translate(-100%) scale(0.85);
 }
 
 .hiddenL {
-    transform: translate(-200%);
+    transform: translate(-180%) scale(0.85);
     filter: opacity(0%);
-    transition: transform 1s, filter 1s;
+    transition: transform cubic-bezier(.05, .25, .01, .99) 0.5s, filter 0.5s;
 }
 
 .leftMost {
-    transform: translate(-200%);
+    transform: translate(-180%) scale(0.65);
+}
+
+.snapLeftMost {
+    transform: translate(-180%) scale(0.65);
+    filter: opacity(0%);
 }
 
 .right {
-    transform: translate(100%);
+    transform: translate(100%) scale(0.85);
     filter: opacity(100%);
-    transition: transform 1s, filter 1s;
+    transition: transform cubic-bezier(.05, .25, .01, .99) 0.5s, filter 0.5s;
 }
 
 .snapRight {
-    transform: translate(100%);
+    transform: translate(100%) scale(0.85);
+}
+
+.hiddenR {
+    transform: translate(180%) scale(0.85);
+    filter: opacity(0%);
+    transition: transform cubic-bezier(.05, .25, .01, .99) 0.5s, filter 0.5s;
 }
 
 .rightMost {
-    transform: translate(200%);
-    transition: transform 1s;
+    transform: translate(180%) scale(0.65);
+    transition: transform 0.5s;
 }
 
 .snapRightMost {
-    transform: translate(200%);
+    transform: translate(180%) scale(0.65);
     filter: opacity(0%);
 }
