@@ -10,29 +10,40 @@
         href="https://fonts.googleapis.com/css2?family=Georama:ital,wght@0,100..900;1,100..900&family=Playwrite+CU:wght@100..400&display=swap"
         rel="stylesheet">
     <link rel="stylesheet"
-        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icons=arrow_back_ios,arrow_forward_ios" />
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@24,400,0,0&icons=arrow_back_ios,arrow_forward_ios,info,close" />
     <link rel="stylesheet" href="./styles.css">
     <title>Arsalan</title>
 </head>
 
-<body style="position: relative;">
-    <div id="loader"
-        style="z-index: 20;position: absolute; top:0; left:0;  height: 100vh; width: 80vw; background-color: black;">
-    </div>
-    <div id="center">
-        <div id="shadow"></div>
-        <div id="mainCont">
-            <div style="display: flex; flex-direction: row; justify-content: space-between;">
-                <div
-                    style="display: flex; flex-direction: column; justify-content: start; align-items: start; width: 50%;">
-                    <div id="headText" class="georama">Arsalan's Portfolio</div>
-                    <div id="headText2" class="georama">Full-Stack Developer with DevOps Skills</div>
+<body>
+    <div id="pageCont" style="position: relative;">
+        <div id="loader"
+            style="z-index: 20;position: absolute; top:0; left:0;  height: 100vh; width: 80vw; background-color: rgba(0, 0, 0, 0);">
+        </div>
+        <div id="niceObj">
+            <div id="starImg"></div>
+        </div>
+        <div id="center">
+            <div id="shadow"></div>
+            <div id="mainCont">
+                <div style="display: flex; flex-direction: row; justify-content: space-between;">
+                    <div
+                        style="display: flex; flex-direction: column; justify-content: start; align-items: start; width: 50%;">
+                        <div id="headText" class="georama">Arsalan's Portfolio</div>
+                        <div id="headText2" class="georama">Full-Stack Developer with DevOps Skills</div>
+                    </div>
+                    <div style="position: absolute; top: 200px; left:100px">
+                        <p style="font-size: large; font-weight: bold; color: orange;  z-index: 100;" id="clicks"></p>
+                        <p style="font-size: large; font-weight: bold; color: orange;  z-index: 100;" id='dir'></p>
+                        <p style="font-size: large; font-weight: bold; color: orange;  z-index: 100;" id='scrollSrc'>
+                        </p>
+                    </div>
+                    <div>
+                        <p style="font-size: 1.2rem; color:white; text-align: end;" class="georama">I'm dedicated to
+                            creating robust,
+                            user-friendly, visually pleasing software.</p>
+                    </div>
                 </div>
-                <div>
-                    <p style="font-size: 1.2rem; color:white; text-align: end;" class="georama">I'm dedicated to creating robust,
-                        user-friendly, visually pleasing software.</p>
-                </div>
-            </div>
                 <div style="display: flex; flex-direction: row;  align-items: start; margin-top: 2%">
                     <div style="width: 40%; margin-right: 6%; ">
                         <p id="skillHeader" class="georama">Skills</p>
@@ -84,24 +95,43 @@
 
                     <div style="position: relative; width: 50%; height: 46.5vh;">
                         <p id="skillHeader" style="text-align: center;" class="georama">Projects</p>
+
                         <div
                             style="position: relative; display: flex; flex-direction: row; justify-content: space-between; align-items: center;">
                             <div id="e1" class="hiddenL"
-                                style="position: absolute; top:1rem; left:38.5%; border: 1px solid rgb(255, 181, 112); border-radius: 1rem; width: 23%; height: 16rem;">
+                                style="position: absolute; top:1rem; left:38.5%; border: 1px solid rgb(255, 255, 255); border-radius: 1rem; width: 23%; height: 16rem; padding:.5rem; box-sizing: border-box;">
                             </div>
                             <div id="item3" class="left"
-                                style="position: absolute; top:1rem; left:38.5%; border: 1px solid rgb(255, 0, 0); border-radius: 1rem; width: 23%; height: 16rem;">
+                                style="position: absolute; top:1rem; left:38.5%; border: 1px solid rgb(255, 255, 255); border-radius: 1rem; width: 23%; height: 16rem; padding:.5rem; box-sizing: border-box;">
                             </div>
                             <div id="item1" class="center"
-                                style="position: absolute; top:1rem; left:38.5%; border: 1px solid rgb(255, 0, 0); border-radius: 1rem; width: 23%; height: 16rem;">
+                                style="position: absolute; top:1rem; left:38.5%; border: 1px solid rgb(255, 255, 255); border-radius: 1rem; width: 23%; height: 16rem; padding:.5rem; box-sizing: border-box;">
+                                <div class="carouselItem">
+                                    <div
+                                        style="border:none; width: 100%; border-radius: 0.5rem; justify-self: end; background-color: rgb(20,20,20);">
+                                        <p class="georama"
+                                            style="color: white; width: 100%; text-align: center; padding: .3rem 0rem; font-size: 1.3vw;">
+                                            Jobhive</p>
+                                    </div>
+                                    <button id="infoBtn" onclick="showInfo()">
+                                        <p class="georama">
+                                            More</p>
+                                        <span class="material-symbols-outlined">
+                                            info
+                                        </span>
+                                    </button>
+                                    <!-- <img src="jobhiveBanner.JPG" style="width: 100%; border-radius: 0.5rem;"> -->
+                                </div>
                             </div>
                             <div id="item2" class="right"
-                                style="position: absolute; top:1rem; left:38.5%; border: 1px solid rgb(255, 0, 0); border-radius: 1rem; width: 23%; height: 16rem;">
+                                style="position: absolute; top:1rem; left:38.5%; border: 1px solid rgb(255, 255, 255); border-radius: 1rem; width: 23%; height: 16rem; padding:.5rem; box-sizing: border-box;">
                             </div>
                             <div id="e2" class="hiddenR"
-                                style="position: absolute; top:1rem; left:38.5%; border: 1px solid gray; border-radius: 1rem; width: 23%; height: 16rem;">
+                                style="position: absolute; top:1rem; left:38.5%; border: 1px solid rgb(255, 255, 255); border-radius: 1rem; width: 23%; height: 16rem; padding:.5rem; box-sizing: border-box;">
                             </div>
                         </div>
+
+                        <!-- buttons to control the carousel -->
                         <button class="childrenCentered roundButton" style="position: absolute; top: 50%; right: 0;"
                             onclick="useCarousel(1)"><span class="material-symbols-outlined">
                                 arrow_forward_ios
@@ -114,8 +144,22 @@
                     </div>
                 </div>
 
+            </div>
         </div>
+        <div id="grad">
+            <img src="./silhouette.png" alt="">
+        </div>
+        <div id="bottom"></div>
+    </div>
+    <div id="projectInfo">
+        <button onclick="closeInfo()" style="position: absolute; top: 0; right: 0; margin: 1vw; border: none; background-color: white; border-radius:5rem; display: flex; justify-content: center; align-items: center; padding: 0.5vw">
+            <span class="material-symbols-outlined">
+                close
+            </span>
+        </button>
+    </div>
+    <div id="blur"></div>
 </body>
-<script src="index1.js"></script>
+<script src="index.js"></script>
 
 </html>
